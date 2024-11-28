@@ -13,7 +13,7 @@ public class GreeterTest {
     Greeter greeter = new Greeter(systemClock);
 
     //Act
-    greeter.greet();
+    String res = greeter.greet();
 
     //Assert
     fail("TODO");
@@ -22,9 +22,12 @@ public class GreeterTest {
   @Test
   void neverAsserts() {
     // Assert that the assertion in greet() is never thrown, by checking all hours from 0 to 23
-    //Arrange
-    //Act
-    //Assert
-    fail("TODO");
+    for(int i = 0; i < 24; i++) {
+      //Arrange
+      MockSystemClock systemClock = new MockSystemClock(i);
+      Greeter greeter = new Greeter(systemClock);
+
+      assertDoesNotThrow(() -> greeter.greet());
+    }
   }
 }

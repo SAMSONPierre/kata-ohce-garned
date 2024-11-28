@@ -8,12 +8,23 @@ public class GreeterTest {
   @Test
   void nightlyGreeting() {
     // Assert that greeter says "Good night" when current hour is 0 (midnight)
+    //Arrange
+    MockSystemClock systemClock = new MockSystemClock(0);
+    Greeter greeter = new Greeter(systemClock);
+
+    //Act
+    greeter.greet();
+
+    //Assert
     fail("TODO");
   }
 
   @Test
   void neverAsserts() {
     // Assert that the assertion in greet() is never thrown, by checking all hours from 0 to 23
+    //Arrange
+    //Act
+    //Assert
     fail("TODO");
   }
 }

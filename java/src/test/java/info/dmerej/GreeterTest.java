@@ -1,8 +1,9 @@
 package info.dmerej;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GreeterTest {
   @Test
@@ -16,7 +17,7 @@ public class GreeterTest {
     String res = greeter.greet();
 
     //Assert
-    fail("TODO");
+    Assertions.assertEquals(res, "Good night");
   }
 
   @Test
